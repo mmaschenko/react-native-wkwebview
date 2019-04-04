@@ -126,6 +126,10 @@ RCT_NOT_IMPLEMENTED(- (instancetype)initWithCoder:(NSCoder *)aDecoder)
   [self setupPostMessageScript];
 }
 
+- (void)setAlphaEnabled:(BOOL)alphaEnabled {
+  _webView.alpha = alphaEnabled ? 0.7f : 1.0f;
+}
+
 - (void)resetupScripts {
   [_webView.configuration.userContentController removeAllUserScripts];
   [self setupPostMessageScript];
